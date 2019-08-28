@@ -9,6 +9,10 @@ GameWorld::GameWorld(int Width, int Height) {
 		windowClosed = true;
 }
 
+GameWorld::~GameWorld() {
+
+}
+
 bool GameWorld::Start() {
 	// Create the game window
 	gameWindow = SDL_CreateWindow("Endless Sword", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN);
@@ -21,6 +25,18 @@ bool GameWorld::Start() {
 	return true;
 }
 
-GameWorld::~GameWorld() {
+void GameWorld::HandleEvents() {
+	SDL_Event event;
 
+	if (SDL_PollEvent(&event)) {
+		switch (event.type)
+		{
+		case SDL_QUIT: // Close the window
+			windowClosed = true;
+			break;
+
+		default:
+			break;
+		}
+	}
 }

@@ -8,6 +8,8 @@ public:
 	GameWorld(int Width, int Height);
 	~GameWorld();
 
+	void HandleEvents();
+
 	inline bool WindowIsClosed() const{ return windowClosed; }
 
 private:
