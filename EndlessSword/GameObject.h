@@ -14,7 +14,7 @@ private:
 	bool shouldUpdate = true;
 	GameWorld* gameWorld;
 
-protected:
+public:
 	virtual void Update();
 };
 
