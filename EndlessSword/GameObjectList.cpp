@@ -24,19 +24,33 @@ void GameObjectList::Add(GameObject* ObjectToAdd) {
 void GameObjectList::UpdateAll() {
 	GameObject* currentObject = head;
 	// Only start the loop if the head is set
-	while (currentObject != nullptr) {
+	while (head != nullptr) {
 		currentObject->Update();
 		if (currentObject != tail) {
 			currentObject = currentObject->nextObjectInList;
 		}
 		else {
-			currentObject = nullptr; // Stop loop if at the last object
+			break; // Stop loop if at the last object
 		}
 	}
 }
 
 void GameObjectList::DeleteObject(GameObject* ObjectToDelete) {
-	ObjectToDelete->previousObjectInList->nextObjectInList = ObjectToDelete->nextObjectInList; // Set the next object of the previous object
-	ObjectToDelete->nextObjectInList->previousObjectInList = ObjectToDelete->previousObjectInList; // Set the previous object of the next object
+	if (ObjectToDelete != tail) { // Set the previous object of the next object if the object is not the tail
+		ObjectToDelete->nextObjectInList->previousObjectInList = ObjectToDelete->previousObjectInList;
+	}
+	else {
+		tail = ObjectToDelete->previousObjectInList; // Set the tail to the previous if this object was the tail
+	}
+
+	if (ObjectToDelete != head) { // Set the next object of the previous object if the object is not the head
+		ObjectToDelete->previousObjectInList->nextObjectInList = ObjectToDelete->nextObjectInList;
+	}
+	else {
+		// Set the head and tail to null if the deleted object is the head
+		head = nullptr;
+		tail = nullptr;
+	}
+
 	delete ObjectToDelete; // Remove the object from memory
 }
