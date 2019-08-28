@@ -1,6 +1,9 @@
 #include "GameWorld.h"
 #include <iostream>
 
+// Define at start for static
+GameWorld* GameWorld::mainWorld;
+
 GameWorld::GameWorld() {
 	// Set window state to closed if the world fails to start
 	if (!Start())
@@ -39,6 +42,7 @@ bool GameWorld::Start() {
 		return false;
 	}
 
+	GameWorld::mainWorld = this;
 	return true;
 }
 
@@ -76,4 +80,8 @@ void GameWorld::DeleteGameObject(GameObject* ObjectToDelete) {
 
 void GameWorld::Update() {
 	gameObjects.UpdateAll();
+}
+
+GameWorld* GameWorld::GetWorld() {
+	return mainWorld;
 }

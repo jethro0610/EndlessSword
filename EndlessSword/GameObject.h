@@ -5,14 +5,15 @@ class GameWorld;
 
 class GameObject {
 public:
-	GameObject(GameWorld* ObjectGameWorld);
+	GameObject();
 	~GameObject();
 
 	bool IsUpdating() { return shouldUpdate; }
 
-private:
+protected:
 	bool shouldUpdate = true;
-	GameWorld* gameWorld;
+
+private:
 	GameObject* previousObjectInList = nullptr;
 	GameObject* nextObjectInList = nullptr;
 

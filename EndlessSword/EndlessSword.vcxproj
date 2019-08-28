@@ -125,12 +125,14 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectList.cpp" />
     <ClCompile Include="GameWorld.cpp" />
+    <ClCompile Include="Geo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectList.h" />
     <ClInclude Include="GameWorld.h" />
+    <ClInclude Include="Geo.h" />
     <ClInclude Include="Position2D.h" />
   </ItemGroup>
   <ItemGroup>

@@ -2,9 +2,8 @@
 #include "GameWorld.h"
 #include <iostream>
 
-GameObject::GameObject(GameWorld* ObjectGameWorld) {
-	gameWorld = ObjectGameWorld;
-	gameWorld->AddGameObject(this);
+GameObject::GameObject() {
+	GameWorld::GetWorld()->AddGameObject(this);
 }
 
 GameObject::~GameObject() {
@@ -15,5 +14,5 @@ void GameObject::Update() {
 }
 
 void GameObject::Delete() {
-	gameWorld->DeleteGameObject(this);
+	GameWorld::GetWorld()->DeleteGameObject(this);
 }

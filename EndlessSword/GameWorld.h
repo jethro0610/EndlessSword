@@ -17,10 +17,13 @@ public:
 	void DeleteGameObject(GameObject* ObjectToDelete);
 	void Update();
 
+	static GameWorld* GetWorld();
+
 	bool WindowIsClosed() const{ return windowClosed; }
 
 private:
 	bool Start();
+	static GameWorld* mainWorld;
 
 private:
 	int width = 1000;
