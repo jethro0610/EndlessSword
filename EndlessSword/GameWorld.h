@@ -14,6 +14,8 @@ public:
 	void HandleEvents();
 	void Draw();
 	void AddGameObject(GameObject* ObjectToAdd);
+	void DeleteGameObject(GameObject* ObjectToDelete);
+	void Update();
 
 	bool WindowIsClosed() const{ return windowClosed; }
 

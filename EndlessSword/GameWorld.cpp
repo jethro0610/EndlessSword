@@ -68,3 +68,11 @@ void GameWorld::Draw(){
 void GameWorld::AddGameObject(GameObject* ObjectToAdd) {
 	gameObjects.Add(ObjectToAdd);
 }
+
+void GameWorld::DeleteGameObject(GameObject* ObjectToDelete) {
+	gameObjects.DeleteObject(ObjectToDelete);
+}
+
+void GameWorld::Update() {
+	gameObjects.UpdateAll();
+}

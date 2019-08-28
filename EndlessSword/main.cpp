@@ -17,6 +17,7 @@ int main(int argc, char** argv) {
 	while (!gameWorld.WindowIsClosed()) {
 		gameWorld.HandleEvents();
 		gameWorld.Draw();
+		gameWorld.Update();
 	}
 
 	return 0;
