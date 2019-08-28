@@ -1,4 +1,5 @@
 #include "GameObjectList.h"
+#include <iostream>
 
 GameObjectList::GameObjectList()
 {

@@ -1,5 +1,6 @@
 #include "GameObject.h"
 #include "GameWorld.h"
+#include <iostream>
 
 GameObject::GameObject(GameWorld* ObjectGameWorld) {
 	gameWorld = ObjectGameWorld;
