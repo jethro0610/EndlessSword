@@ -10,7 +10,7 @@ public:
 
 	void HandleEvents();
 
-	void ClearRenderer();
+	void Draw();
 
 	inline bool WindowIsClosed() const{ return windowClosed; }
 

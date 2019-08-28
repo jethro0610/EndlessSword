@@ -51,7 +51,7 @@ void GameWorld::HandleEvents() {
 	}
 }
 
-void GameWorld::ClearRenderer(){
+void GameWorld::Draw(){
 	SDL_SetRenderDrawColor(gameRenderer, 204, 229, 255, 255);
 	SDL_RenderClear(gameRenderer);
 	SDL_RenderPresent(gameRenderer);
