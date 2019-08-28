@@ -64,3 +64,7 @@ void GameWorld::Draw(){
 	SDL_RenderClear(gameRenderer);
 	SDL_RenderPresent(gameRenderer);
 }
+
+void GameWorld::AddGameObject(GameObject* ObjectToAdd) {
+	gameObjects.Add(ObjectToAdd);
+}

@@ -13,6 +13,10 @@ public:
 private:
 	bool shouldUpdate = true;
 	GameWorld* gameWorld;
+	GameObject* previousObjectInList = nullptr;
+	GameObject* nextObjectInList = nullptr;
+
+	friend class GameObjectList; // Allow GameObjectList to access private members
 
 public:
 	virtual void Update();

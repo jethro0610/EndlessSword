@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <iostream>
 #include "GameObject.h"
+#include "GameObjectList.h"
 
 class GameWorld {
 public:
@@ -11,8 +12,8 @@ public:
 	~GameWorld();
 
 	void HandleEvents();
-
 	void Draw();
+	void AddGameObject(GameObject* ObjectToAdd);
 
 	bool WindowIsClosed() const{ return windowClosed; }
 
@@ -27,5 +28,7 @@ private:
 
 	SDL_Window* gameWindow = nullptr;
 	SDL_Renderer* gameRenderer = nullptr;
+
+	GameObjectList gameObjects = GameObjectList();
 };
 
