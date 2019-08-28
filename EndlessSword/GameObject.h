@@ -1,17 +1,18 @@
 #pragma once
 
-#include "GameWorld.h"
+// Forward declaration of game world
+class GameWorld;
 
 class GameObject {
 public:
-	GameObject(GameWorld ObjectGameWorld);
+	GameObject(GameWorld* ObjectGameWorld);
 	~GameObject();
 
 	bool IsUpdating() { return shouldUpdate; }
 
 private:
 	bool shouldUpdate = true;
-	GameWorld gameWorld;
+	GameWorld* gameWorld;
 
 protected:
 	virtual void Update();
