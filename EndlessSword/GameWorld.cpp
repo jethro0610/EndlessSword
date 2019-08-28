@@ -1,5 +1,11 @@
 #include "GameWorld.h"
 
+GameWorld::GameWorld() {
+	// Set window state to closed if the world fails to start
+	if (!Start())
+		windowClosed = true;
+}
+
 GameWorld::GameWorld(int Width, int Height) {
 	height = Height;
 	width = Width;
@@ -52,6 +58,8 @@ void GameWorld::HandleEvents() {
 }
 
 void GameWorld::Draw(){
+	// Clear renderer before drawing
+	// Not doing so would cause trailing
 	SDL_SetRenderDrawColor(gameRenderer, 204, 229, 255, 255);
 	SDL_RenderClear(gameRenderer);
 	SDL_RenderPresent(gameRenderer);

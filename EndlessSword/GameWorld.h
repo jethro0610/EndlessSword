@@ -5,6 +5,7 @@
 
 class GameWorld {
 public:
+	GameWorld();
 	GameWorld(int Width, int Height);
 	~GameWorld();
 
@@ -12,7 +13,7 @@ public:
 
 	void Draw();
 
-	inline bool WindowIsClosed() const{ return windowClosed; }
+	bool WindowIsClosed() const{ return windowClosed; }
 
 private:
 	bool Start();
