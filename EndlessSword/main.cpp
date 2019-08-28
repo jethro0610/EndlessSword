@@ -12,8 +12,11 @@ int main(int argc, char** argv) {
 	}
 
 	GameWorld gameWorld = GameWorld(800, 800);
+
+	// Always handle events and clear the renderer
 	while (!gameWorld.WindowIsClosed()) {
 		gameWorld.HandleEvents();
+		gameWorld.ClearRenderer();
 	}
 
 	return 0;

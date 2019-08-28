@@ -10,7 +10,9 @@ GameWorld::GameWorld(int Width, int Height) {
 }
 
 GameWorld::~GameWorld() {
-
+	SDL_DestroyRenderer(gameRenderer);
+	SDL_DestroyWindow(gameWindow);
+	SDL_Quit();
 }
 
 bool GameWorld::Start() {
@@ -19,6 +21,14 @@ bool GameWorld::Start() {
 
 	if (gameWindow == nullptr) {
 		std::cerr << "Window couldn't be created \n";
+		return false;
+	}
+
+	// Create the renderer
+	gameRenderer = SDL_CreateRenderer(gameWindow, -1, SDL_RENDERER_ACCELERATED);
+	
+	if (gameWindow == nullptr) {
+		std::cerr << "Renderer couldn't be created \n";
 		return false;
 	}
 
@@ -39,4 +49,10 @@ void GameWorld::HandleEvents() {
 			break;
 		}
 	}
+}
+
+void GameWorld::ClearRenderer(){
+	SDL_SetRenderDrawColor(gameRenderer, 204, 229, 255, 255);
+	SDL_RenderClear(gameRenderer);
+	SDL_RenderPresent(gameRenderer);
 }

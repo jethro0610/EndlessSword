@@ -10,6 +10,8 @@ public:
 
 	void HandleEvents();
 
+	void ClearRenderer();
+
 	inline bool WindowIsClosed() const{ return windowClosed; }
 
 private:
