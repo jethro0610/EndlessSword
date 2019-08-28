@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
 		std::cout << "SDL initialized";
 	}
 
-	GameWorld gameWorld = GameWorld(500, 500);
+	GameWorld gameWorld = GameWorld(800, 800);
 	while (!gameWorld.WindowIsClosed()) {
 		gameWorld.HandleEvents();
 	}
