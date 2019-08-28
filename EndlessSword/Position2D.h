@@ -4,6 +4,11 @@ struct Position2D {
 	float x = 0;
 	float y = 0;
 
+	Position2D() {
+		x = 0;
+		y = 0;
+	}
+
 	Position2D(float X, float Y) {
 		x = X;
 		y = Y;
