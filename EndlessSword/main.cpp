@@ -5,10 +5,10 @@
 int main(int argc, char** argv) {
 	// Start SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
-		std::cerr << "SDL failed \n";
+		std::cerr << "SDL failed" << std::endl;
 	}
 	else {
-		std::cout << "SDL initialized";
+		std::cout << "SDL initialized" << std::endl;
 	}
 
 	GameWorld gameWorld = GameWorld(800, 800);
@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 	// Always handle events and clear the renderer
 	while (!gameWorld.WindowIsClosed()) {
 		gameWorld.HandleEvents();
-		gameWorld.ClearRenderer();
+		gameWorld.Draw();
 	}
 
 	return 0;
