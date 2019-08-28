@@ -20,5 +20,6 @@ private:
 
 public:
 	virtual void Update();
+	void Delete();
 };
 

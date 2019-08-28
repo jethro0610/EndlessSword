@@ -13,3 +13,7 @@ GameObject::~GameObject() {
 void GameObject::Update() {
 
 }
+
+void GameObject::Delete() {
+	gameWorld->DeleteGameObject(this);
+}
