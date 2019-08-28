@@ -1,4 +1,5 @@
 #include "GameWorld.h"
+#include <iostream>
 
 GameWorld::GameWorld() {
 	// Set window state to closed if the world fails to start
