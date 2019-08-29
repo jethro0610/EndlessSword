@@ -1,5 +1,6 @@
 #include "GameWorld.h"
 #include <iostream>
+#include <string>
 
 // Define at start for static
 GameWorld* GameWorld::mainWorld;
@@ -42,6 +43,17 @@ bool GameWorld::Start() {
 		return false;
 	}
 
+	font = TTF_OpenFont("Sans.ttf", 24);
+	if (font == nullptr)
+		std::cout << "f" << std::endl;
+
+	uiRect.x = 0;
+	uiRect.y = 0;
+	uiRect.w = 100;
+	uiRect.h = 100;
+
+	AddScore(0);
+
 	GameWorld::mainWorld = this;
 	return true;
 }
@@ -70,6 +82,8 @@ void GameWorld::Draw(){
 
 	gameObjects.DrawAll();
 
+	SDL_RenderCopy(gameRenderer, texture, nullptr, &uiRect);
+
 	SDL_RenderPresent(gameRenderer);
 }
 
@@ -93,4 +107,12 @@ void GameWorld::Update() {
 
 GameWorld* GameWorld::GetWorld() {
 	return mainWorld;
+}
+
+void GameWorld::AddScore(int PointsToAdd) {
+	score += PointsToAdd;
+
+	surface = TTF_RenderText_Solid(font, ("Score: " + std::to_string(score)).c_str(), color);
+	texture = SDL_CreateTextureFromSurface(gameRenderer, surface);
+	SDL_FreeSurface(surface);
 }

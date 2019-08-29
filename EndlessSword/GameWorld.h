@@ -5,6 +5,7 @@
 #include "GameObject.h"
 #include "GameObjectList.h"
 #include "Vector2D.h"
+#include <SDL_ttf.h>
 
 class GameWorld {
 public:
@@ -31,14 +32,19 @@ public:
 	static GameWorld* GetWorld();
 
 	bool WindowIsClosed() const{ return windowClosed; }
-
-public:
-	int score = 0;
+	void AddScore(int PointsToAdd);
 
 private:
+	int score = 0;
 	Vector2D mousePosition;
 	bool Start();
 	static GameWorld* mainWorld;
+
+	TTF_Font* font;
+	SDL_Color color = { 0, 0, 0, 255 };
+	SDL_Surface* surface;
+	SDL_Texture* texture;
+	SDL_Rect uiRect;
 
 private:
 	int width = 1000;

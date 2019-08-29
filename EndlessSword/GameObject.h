@@ -27,6 +27,6 @@ private:
 public:
 	virtual void Update();
 	virtual void Draw();
-	void Delete();
+	virtual void Delete();
 };
 

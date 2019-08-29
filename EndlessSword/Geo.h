@@ -11,6 +11,8 @@ public:
 
 	float GetDistanceFromMouse();
 
+	virtual void Delete() override;
+
 public:
 	Vector2D velocity = Vector2D(0, 0);
 

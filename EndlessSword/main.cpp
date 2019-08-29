@@ -1,13 +1,9 @@
 #include <iostream>
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include "GameWorld.h"
-#include "Geo.h"
 #include "GeoHole.h"
-#include "Diamond.h"
-#include "Hexagon.h"
-#include "Octagon.h"
 #include "Spawner.h"
-#include "TransformObject.h"
 
 int main(int argc, char** argv) {
 	// Start SDL
@@ -18,8 +14,11 @@ int main(int argc, char** argv) {
 		std::cout << "SDL initialized" << std::endl;
 	}
 
+	// Init image
 	IMG_Init(IMG_INIT_PNG);
-	
+	// Init text
+	TTF_Init();
+
 	GameWorld gameWorld = GameWorld(800, 800);
 	Spawner* spawner = new Spawner(100);
 
