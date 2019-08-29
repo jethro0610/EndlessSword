@@ -65,7 +65,7 @@ void GameWorld::HandleEvents() {
 void GameWorld::Draw(){
 	// Clear renderer before drawing
 	// Not doing so would cause trailing
-	SDL_SetRenderDrawColor(gameRenderer, 204, 229, 255, 255);
+	SDL_SetRenderDrawColor(gameRenderer, 255, 255, 255, 255);
 	SDL_RenderClear(gameRenderer);
 
 	gameObjects.DrawAll();

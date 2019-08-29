@@ -3,11 +3,6 @@
 #include <iostream>
 
 TransformObject::TransformObject() {
-	if (imagePath != "") {
-		surface = IMG_Load(imagePath.c_str());
-		texture = SDL_CreateTextureFromSurface(GameWorld::GetWorld()->GetRenderer(), surface);
-		SDL_FreeSurface(surface);
-	}
 }
 
 TransformObject::~TransformObject() {
@@ -51,6 +46,13 @@ std::vector<TransformObject*> TransformObject::GetAllOverlaps() {
 	}
 
 	return returnList;
+}
+
+void TransformObject::SetImage(std::string Path) {
+	imagePath = Path;
+	surface = IMG_Load(imagePath.c_str());
+	texture = SDL_CreateTextureFromSurface(GameWorld::GetWorld()->GetRenderer(), surface);
+	SDL_FreeSurface(surface);
 }
 
 Vector2D TransformObject::GetDrawPosition() {

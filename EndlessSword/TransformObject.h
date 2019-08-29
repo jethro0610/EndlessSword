@@ -21,12 +21,11 @@ public:
 	float scale = 20.0f;
 
 protected:
-	std::string imagePath = "";
-
-protected:
+	void SetImage(std::string Path);
 	Vector2D GetDrawPosition();
 
 private:
+	std::string imagePath = "";
 	SDL_Surface* surface = nullptr;
 	SDL_Texture* texture = nullptr;
 };

@@ -4,7 +4,8 @@
 #include <vector>
 
 GeoHole::GeoHole() {
-	scale = 100.0f;
+	SetImage("img/circle.png");
+	scale = 200.0f;
 }
 
 
@@ -20,8 +21,4 @@ void GeoHole::Update() {
 			geoCast->Delete();
 		}
 	}
-}
-
-void GeoHole::Draw() {
-
 }

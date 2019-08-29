@@ -6,6 +6,5 @@ public:
 	~GeoHole();
 
 	void Update() override;
-	void Draw() override;
 };
 
