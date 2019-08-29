@@ -1,20 +1,16 @@
 #pragma once
 #include "TransformObject.h"
-class Geo :
-	public TransformObject
-{
+class Geo : public TransformObject {
 public:
 	Geo();
 	~Geo();
 
 	void SetColor(Uint8 Red, Uint8 Green, Uint8 Blue);
+	virtual void Update() override;
+	void Move(Vector2D Direction);
 
 public:
 	Vector2D velocity = Vector2D(0, 0);
-
-public:
-	virtual void Update() override;
-	void Move(Vector2D Direction);
 
 protected:
 	virtual void OnOutOfBounds();

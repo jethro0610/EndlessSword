@@ -11,6 +11,7 @@ public:
 
 	bool IsOverlapping(TransformObject* OtherObject);
 	std::vector<TransformObject*> GetAllOverlaps();
+
 public:
 	Vector2D position;
 	float scale = 20.0f;
