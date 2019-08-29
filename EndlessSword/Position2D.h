@@ -14,6 +14,13 @@ struct Position2D {
 		y = Y;
 	}
 
+	// Distance formula
+	float GetDistance(Position2D OtherPosition) {
+		float xDist = pow((OtherPosition.x - x), 2.0f);
+		float yDist = pow((OtherPosition.y - y), 2.0f);
+		return sqrt(xDist + yDist);
+	}
+
 	// Add two positions
 	Position2D operator+(const Position2D& OtherPosition) {
 		return Position2D(x + OtherPosition.x, y + OtherPosition.y);
