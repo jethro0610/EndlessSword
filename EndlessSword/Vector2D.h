@@ -36,7 +36,7 @@ struct Vector2D {
 	Vector2D operator+(const Vector2D& OtherVector) {
 		return Vector2D(x + OtherVector.x, y + OtherVector.y);
 	}
-	Vector2D operator+=(const Vector2D& OtherVector) {
+	void operator+=(const Vector2D& OtherVector) {
 		x += OtherVector.x;
 		y += OtherVector.y;
 	}
@@ -45,7 +45,7 @@ struct Vector2D {
 	Vector2D operator-(const Vector2D& OtherVector) {
 		return Vector2D(x - OtherVector.x, y - OtherVector.y);
 	}
-	Vector2D operator-=(const Vector2D& OtherVector) {
+	void operator-=(const Vector2D& OtherVector) {
 		x -= OtherVector.x;
 		y -= OtherVector.y;
 	}
@@ -54,7 +54,7 @@ struct Vector2D {
 	Vector2D operator*(const float& MultiplyFloat) {
 		return Vector2D(x * MultiplyFloat, y * MultiplyFloat);
 	}
-	Vector2D operator*=(const Vector2D& OtherVector) {
+	void operator*=(const Vector2D& OtherVector) {
 		x *= OtherVector.x;
 		y *= OtherVector.y;
 	}
@@ -63,7 +63,7 @@ struct Vector2D {
 	Vector2D operator/(const float& DivideFloat) {
 		return Vector2D(x / DivideFloat, y / DivideFloat);
 	}
-	Vector2D operator/=(const Vector2D& OtherVector) {
+	void operator/=(const Vector2D& OtherVector) {
 		x /= OtherVector.x;
 		y /= OtherVector.y;
 	}
