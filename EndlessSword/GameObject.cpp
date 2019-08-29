@@ -20,5 +20,4 @@ void GameObject::Draw() {
 
 void GameObject::Delete() {
 	GameWorld::GetWorld()->DeleteGameObject(this);
-	//queuedForDeletion = true;
 }
