@@ -4,6 +4,7 @@
 #include <iostream>
 #include "GameObject.h"
 #include "GameObjectList.h"
+#include "Vector2D.h"
 
 class GameWorld {
 public:
@@ -22,6 +23,8 @@ public:
 	int GetWidth() { return width; };
 	int GetHeight() { return height; };
 
+	Vector2D GetMousePosition() { return mousePosition; };
+
 	GameObject* GetFirstObject() { return gameObjects.GetFirstObject(); };
 	GameObject* GetLastObject() { return gameObjects.GetLastObject(); };
 
@@ -30,6 +33,7 @@ public:
 	bool WindowIsClosed() const{ return windowClosed; }
 
 private:
+	Vector2D mousePosition;
 	bool Start();
 	static GameWorld* mainWorld;
 

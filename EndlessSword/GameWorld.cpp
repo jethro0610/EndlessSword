@@ -82,6 +82,12 @@ void GameWorld::DeleteGameObject(GameObject* ObjectToDelete) {
 }
 
 void GameWorld::Update() {
+	// Update mouse position
+	int mouseX;
+	int mouseY;
+	SDL_GetMouseState(&mouseX, &mouseY);
+	mousePosition = Vector2D(mouseX, mouseY);
+
 	gameObjects.UpdateAll();
 }
 
