@@ -24,7 +24,7 @@ struct Vector2D {
 
 	float GetMagnitude() {
 		float xSqr = pow(x, 2.0f);
-		float ySqr = pow(7, 2.0f);
+		float ySqr = pow(y, 2.0f);
 		return sqrt(xSqr + ySqr);
 	}
 

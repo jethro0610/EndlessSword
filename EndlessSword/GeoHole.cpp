@@ -18,7 +18,7 @@ void GeoHole::Update() {
 	for (int i = 0; i < overlapList.size(); i++){
 		Geo* geoCast = dynamic_cast<Geo*>(overlapList[i]);
 		if (geoCast != nullptr) { // If the overlap is a Geo...
-			//geoCast->Delete();
+			geoCast->Delete();
 		}
 	}
 }
