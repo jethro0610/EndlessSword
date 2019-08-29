@@ -14,6 +14,7 @@ public:
 	void DeleteObject(GameObject* ObjectToDelete);
 
 	GameObject* GetFirstObject() { return head; };
+	GameObject* GetLastObject() { return tail; };
 
 private:
 	GameObject* head = nullptr;

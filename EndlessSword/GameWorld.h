@@ -20,6 +20,7 @@ public:
 	void Update();
 
 	GameObject* GetFirstObject() { return gameObjects.GetFirstObject(); };
+	GameObject* GetLastObject() { return gameObjects.GetLastObject(); };
 
 	static GameWorld* GetWorld();
 
