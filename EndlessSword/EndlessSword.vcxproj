@@ -128,6 +128,8 @@
     <ClCompile Include="GameWorld.cpp" />
     <ClCompile Include="Geo.cpp" />
     <ClCompile Include="GeoHole.cpp" />
+    <ClCompile Include="Hexagon.cpp" />
+    <ClCompile Include="Octagon.cpp" />
     <ClCompile Include="TransformObject.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -138,6 +140,8 @@
     <ClInclude Include="GameWorld.h" />
     <ClInclude Include="Geo.h" />
     <ClInclude Include="GeoHole.h" />
+    <ClInclude Include="Hexagon.h" />
+    <ClInclude Include="Octagon.h" />
     <ClInclude Include="TransformObject.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>

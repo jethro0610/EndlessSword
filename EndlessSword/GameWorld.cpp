@@ -35,7 +35,7 @@ bool GameWorld::Start() {
 	}
 
 	// Create the renderer
-	gameRenderer = SDL_CreateRenderer(gameWindow, -1, SDL_RENDERER_ACCELERATED);
+	gameRenderer = SDL_CreateRenderer(gameWindow, -1, SDL_RENDERER_PRESENTVSYNC);
 	
 	if (gameWindow == nullptr) {
 		std::cerr << "Renderer couldn't be created \n";

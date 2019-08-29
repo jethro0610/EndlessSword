@@ -19,7 +19,7 @@ protected:
 	float GetAcceleration() { return (maxSpeed * friction) / (-friction + 1.0f); };
 
 protected:
-	float maxSpeed = 10.0f;
+	float maxSpeed = 1.0f;
 	float friction = 0.01f;
 
 	Uint8 red = 255;
