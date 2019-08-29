@@ -4,7 +4,7 @@
 
 TransformObject::TransformObject() {
 	if (imagePath != "") {
-		surface = SDL_LoadBMP(imagePath.c_str());
+		surface = IMG_Load(imagePath.c_str());
 		texture = SDL_CreateTextureFromSurface(GameWorld::GetWorld()->GetRenderer(), surface);
 		SDL_FreeSurface(surface);
 	}
