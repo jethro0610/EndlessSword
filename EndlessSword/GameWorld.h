@@ -19,6 +19,9 @@ public:
 	void DeleteGameObject(GameObject* ObjectToDelete);
 	void Update();
 
+	int GetWidth() { return width; };
+	int GetHeight() { return height; };
+
 	GameObject* GetFirstObject() { return gameObjects.GetFirstObject(); };
 	GameObject* GetLastObject() { return gameObjects.GetLastObject(); };
 
