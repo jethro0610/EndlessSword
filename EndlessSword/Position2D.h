@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 
 struct Position2D {
 	float x = 0;
