@@ -89,7 +89,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -122,18 +122,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Diamond.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectList.cpp" />
     <ClCompile Include="GameWorld.cpp" />
     <ClCompile Include="Geo.cpp" />
+    <ClCompile Include="GeoHole.cpp" />
+    <ClCompile Include="TransformObject.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Diamond.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectList.h" />
     <ClInclude Include="GameWorld.h" />
     <ClInclude Include="Geo.h" />
-    <ClInclude Include="Position2D.h" />
+    <ClInclude Include="GeoHole.h" />
+    <ClInclude Include="TransformObject.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="EndlessSword.rc" />

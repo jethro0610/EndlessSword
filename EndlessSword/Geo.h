@@ -9,6 +9,8 @@ public:
 	virtual void Update() override;
 	void Move(Vector2D Direction);
 
+	float GetDistanceFromMouse();
+
 public:
 	Vector2D velocity = Vector2D(0, 0);
 

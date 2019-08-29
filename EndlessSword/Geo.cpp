@@ -41,7 +41,10 @@ void Geo::Move(Vector2D Direction) {
 	velocity += Direction.GetUnitVector() * GetAcceleration();
 }
 
+float Geo::GetDistanceFromMouse() {
+	return position.GetDistance(GameWorld::GetWorld()->GetMousePosition());
+}
+
 void Geo::OnOutOfBounds() {
-	std::cout << "oob" << std::endl;
 	Delete();
 }
