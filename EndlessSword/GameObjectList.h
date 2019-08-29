@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include <vector>
 
 // Linked list of game objects
 class GameObjectList

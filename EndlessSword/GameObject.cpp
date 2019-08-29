@@ -19,5 +19,5 @@ void GameObject::Draw() {
 }
 
 void GameObject::Delete() {
-	GameWorld::GetWorld()->DeleteGameObject(this);
+	queueForDeletion = true;
 }

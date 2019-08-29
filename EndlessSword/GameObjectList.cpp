@@ -1,5 +1,6 @@
 #include "GameObjectList.h"
 #include <iostream>
+#include <vector>
 
 GameObjectList::GameObjectList()
 {
@@ -24,9 +25,13 @@ void GameObjectList::Add(GameObject* ObjectToAdd) {
 
 void GameObjectList::UpdateAll() {
 	GameObject* currentObject = head;
+	std::vector<GameObject*> deletionQueue;
 	while (head != nullptr) { // Only start the loop if the head is set
 		GameObject* nextObject = currentObject->nextObjectInList; // Have to set next before update because object can be deleted during update
 		currentObject->Update();
+
+		if (currentObject->queueForDeletion)
+			deletionQueue.push_back(currentObject);
 
 		if (currentObject != tail && nextObject != nullptr) {
 			currentObject = nextObject;
@@ -34,6 +39,11 @@ void GameObjectList::UpdateAll() {
 		else {
 			break; // Stop loop if at the last object
 		}
+	}
+
+	// Delete all objects queued for deletion
+	for (int i = 0; i < deletionQueue.size(); i++) {
+		DeleteObject(deletionQueue[i]);
 	}
 }
 
@@ -57,6 +67,10 @@ void GameObjectList::DeleteObject(GameObject* ObjectToDelete) {
 	// Change the head if the head is deleted
 	if (ObjectToDelete == head && ObjectToDelete != tail)
 		head = ObjectToDelete->nextObjectInList;
+
+	// Change the tail if the tail is deleted
+	if (ObjectToDelete == tail && ObjectToDelete != head)
+		tail = ObjectToDelete->previousObjectInList;
 
 	// Null the head and tail if the object is the only one in the list
 	if (ObjectToDelete == head && ObjectToDelete == tail) {

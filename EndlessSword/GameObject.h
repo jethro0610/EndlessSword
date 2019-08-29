@@ -20,6 +20,8 @@ private:
 	GameObject* previousObjectInList = nullptr;
 	GameObject* nextObjectInList = nullptr;
 
+	bool queueForDeletion = false;
+
 	friend class GameObjectList; // Allow GameObjectList to access private members
 
 public:

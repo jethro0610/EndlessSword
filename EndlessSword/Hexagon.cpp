@@ -10,7 +10,7 @@ Hexagon::~Hexagon() {
 
 void Hexagon::Update() {
 	Geo::Update();
-	if (GetDistanceFromMouse() < 200.0f) {
+	if (GetDistanceFromMouse() < 100.0f) {
 		// Move away from mouse
 		Move(position - GameWorld::GetWorld()->GetMousePosition());
 	}

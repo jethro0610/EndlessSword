@@ -20,7 +20,7 @@ protected:
 
 protected:
 	float maxSpeed = 1.0f;
-	float friction = 0.01f;
+	float friction = 0.1f;
 
 	Uint8 red = 255;
 	Uint8 green = 255;

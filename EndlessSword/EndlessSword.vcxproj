@@ -91,6 +91,7 @@
     <Link>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
+      <HeapCommitSize>8192</HeapCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -130,6 +131,7 @@
     <ClCompile Include="GeoHole.cpp" />
     <ClCompile Include="Hexagon.cpp" />
     <ClCompile Include="Octagon.cpp" />
+    <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="TransformObject.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -142,6 +144,7 @@
     <ClInclude Include="GeoHole.h" />
     <ClInclude Include="Hexagon.h" />
     <ClInclude Include="Octagon.h" />
+    <ClInclude Include="Spawner.h" />
     <ClInclude Include="TransformObject.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
