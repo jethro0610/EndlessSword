@@ -11,6 +11,8 @@ public:
 	GameWorld(int Width, int Height);
 	~GameWorld();
 
+	SDL_Renderer* GetRenderer() { return gameRenderer; };
+
 	void HandleEvents();
 	void Draw();
 	void AddGameObject(GameObject* ObjectToAdd);

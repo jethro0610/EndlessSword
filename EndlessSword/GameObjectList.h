@@ -10,6 +10,7 @@ public:
 
 	void Add(GameObject* ObjectToAdd);
 	void UpdateAll();
+	void DrawAll();
 	void DeleteObject(GameObject* ObjectToDelete);
 
 private:

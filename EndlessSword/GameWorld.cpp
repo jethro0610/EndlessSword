@@ -67,6 +67,9 @@ void GameWorld::Draw(){
 	// Not doing so would cause trailing
 	SDL_SetRenderDrawColor(gameRenderer, 204, 229, 255, 255);
 	SDL_RenderClear(gameRenderer);
+
+	gameObjects.DrawAll();
+
 	SDL_RenderPresent(gameRenderer);
 }
 
