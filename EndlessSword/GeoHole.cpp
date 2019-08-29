@@ -4,7 +4,7 @@
 #include <vector>
 
 GeoHole::GeoHole() {
-	scale = 100.0f
+	scale = 100.0f;
 }
 
 

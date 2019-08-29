@@ -3,6 +3,11 @@
 #include <iostream>
 
 TransformObject::TransformObject() {
+	if (imagePath != "") {
+		surface = SDL_LoadBMP(imagePath.c_str());
+		texture = SDL_CreateTextureFromSurface(GameWorld::GetWorld()->GetRenderer(), surface);
+		SDL_FreeSurface(surface);
+	}
 }
 
 TransformObject::~TransformObject() {
@@ -51,4 +56,17 @@ std::vector<TransformObject*> TransformObject::GetAllOverlaps() {
 Vector2D TransformObject::GetDrawPosition() {
 	// Return position that is centered based on scale
 	return Vector2D(position.x - (scale / 2), position.y - (scale / 2));
+}
+
+void TransformObject::Draw() {
+	if (imagePath != "") {
+		SDL_Rect renderRect;
+
+		renderRect.x = GetDrawPosition().x;
+		renderRect.y = GetDrawPosition().y;
+		renderRect.w = scale;
+		renderRect.h = scale;
+
+		SDL_RenderCopy(GameWorld::GetWorld()->GetRenderer(), texture, nullptr, &renderRect);
+	}
 }
