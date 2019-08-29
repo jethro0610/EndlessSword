@@ -32,6 +32,9 @@ public:
 
 	bool WindowIsClosed() const{ return windowClosed; }
 
+public:
+	int score = 0;
+
 private:
 	Vector2D mousePosition;
 	bool Start();

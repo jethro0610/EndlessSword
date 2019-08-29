@@ -6,6 +6,8 @@ Geo::Geo() {
 }
 
 Geo::~Geo() {
+	// Add points
+	GameWorld::GetWorld()->score += pointValue;
 }
 
 void Geo::SetColor(Uint8 Red, Uint8 Green, Uint8 Blue) {
@@ -46,5 +48,7 @@ float Geo::GetDistanceFromMouse() {
 }
 
 void Geo::OnOutOfBounds() {
+	// Remove point
+	GameWorld::GetWorld()->score -= pointValue + 1;
 	Delete();
 }

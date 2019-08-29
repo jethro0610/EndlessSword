@@ -3,6 +3,7 @@
 Hexagon::Hexagon() {
 	SetImage("img/hexagon.png");
 	scale = 50.0f;
+	pointValue = 5;
 }
 
 Hexagon::~Hexagon() {

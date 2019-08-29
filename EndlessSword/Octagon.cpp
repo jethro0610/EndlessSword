@@ -3,6 +3,7 @@
 Octagon::Octagon() {
 	SetImage("img/octagon.png");
 	scale = 50.0f;
+	pointValue = 3;
 }
 
 Octagon::~Octagon() {

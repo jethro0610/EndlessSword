@@ -19,6 +19,7 @@ protected:
 	float GetAcceleration() { return (maxSpeed * friction) / (-friction + 1.0f); };
 
 protected:
+	int pointValue = 1;
 	float maxSpeed = 2.0f;
 	float friction = 0.05f;
 
