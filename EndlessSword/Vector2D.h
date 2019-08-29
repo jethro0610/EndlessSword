@@ -22,6 +22,16 @@ struct Vector2D {
 		return sqrt(xDist + yDist);
 	}
 
+	float GetMagnitude() {
+		float xSqr = pow(x, 2.0f);
+		float ySqr = pow(7, 2.0f);
+		return sqrt(xSqr + ySqr);
+	}
+
+	Vector2D GetUnitVector() {
+		return Vector2D(x / GetMagnitude(), y / GetMagnitude());
+	}
+
 	// Add two Vectors
 	Vector2D operator+(const Vector2D& OtherVector) {
 		return Vector2D(x + OtherVector.x, y + OtherVector.y);
