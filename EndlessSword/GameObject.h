@@ -10,6 +10,9 @@ public:
 
 	bool IsUpdating() { return shouldUpdate; }
 
+	GameObject* GetPrevious() { return previousObjectInList; };
+	GameObject* GetNext() { return nextObjectInList; };
+
 protected:
 	bool shouldUpdate = true;
 

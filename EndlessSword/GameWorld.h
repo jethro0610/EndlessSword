@@ -19,6 +19,8 @@ public:
 	void DeleteGameObject(GameObject* ObjectToDelete);
 	void Update();
 
+	GameObject* GetFirstObject() { return gameObjects.GetFirstObject(); };
+
 	static GameWorld* GetWorld();
 
 	bool WindowIsClosed() const{ return windowClosed; }

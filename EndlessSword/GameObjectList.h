@@ -13,6 +13,8 @@ public:
 	void DrawAll();
 	void DeleteObject(GameObject* ObjectToDelete);
 
+	GameObject* GetFirstObject() { return head; };
+
 private:
 	GameObject* head = nullptr;
 	GameObject* tail = nullptr;
